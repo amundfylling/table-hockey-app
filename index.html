@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table Hockey Match Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Table Hockey Match Explorer</h1>
+            <p>Explore match results and player performance from table hockey tournaments.</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="controls">
+            <label for="playerSelect">Choose a player:</label>
+            <select id="playerSelect" disabled>
+                <option value="">Loading players...</option>
+            </select>
+            <p id="statusMessage" class="status">Fetching match data...</p>
+            <p id="errorMessage" class="error hidden"></p>
+        </section>
+
+        <section id="summarySection" class="summary hidden">
+            <h2>Player Summary</h2>
+            <div class="summary-grid">
+                <div class="stat-card">
+                    <span class="stat-label">Total Games</span>
+                    <span class="stat-value" id="totalGames">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Wins</span>
+                    <span class="stat-value" id="wins">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Losses</span>
+                    <span class="stat-value" id="losses">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Draws</span>
+                    <span class="stat-value" id="draws">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Goals Scored</span>
+                    <span class="stat-value" id="goalsFor">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Goals Conceded</span>
+                    <span class="stat-value" id="goalsAgainst">0</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-label">Win Percentage</span>
+                    <span class="stat-value" id="winPercentage">0%</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="matchesSection" class="table-section hidden">
+            <h2>Match History</h2>
+            <p id="noMatchesMessage" class="info hidden">No matches found for the selected player.</p>
+            <div class="table-wrapper">
+                <table id="matchesTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Opponent</th>
+                            <th>Player Goals</th>
+                            <th>Opponent Goals</th>
+                            <th>Result</th>
+                            <th>Tournament</th>
+                        </tr>
+                    </thead>
+                    <tbody id="matchesTableBody">
+                        <!-- Rows populated by script.js -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>Data sourced from the Scorpion Scraper project.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
